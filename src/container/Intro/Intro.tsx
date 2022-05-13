@@ -8,14 +8,14 @@ const Intro = () => {
   const [playVideo, setPlayVideo] = React.useState(false)
   const vidRef = React.useRef()
 
-  const handlePlay: React.MouseEventHandler<HTMLDivElement> = (): void => {
-    setPlayVideo(!playVideo)
-    if (playVideo) {
-      vidRef.current.pause()
-    } else {
-      vidRef.current.play()
-    }
-  }
+  // const handlePlay: React.MouseEventHandler<HTMLDivElement> = (): void => {
+  //   setPlayVideo(!playVideo)
+  //   if (playVideo) {
+  //     vidRef.current.pause()
+  //   } else {
+  //     vidRef.current.play()
+  //   }
+  // }
 
   return (
     <div className="app__video">
@@ -31,7 +31,12 @@ const Intro = () => {
         <div
           className="app__video-overlay_circle flex__center"
           onClick={() => {
-            handlePlay
+            setPlayVideo(!playVideo)
+            if (playVideo) {
+              vidRef.current.pause()
+            } else {
+              vidRef.current.play()
+            }
           }}
           role="presentation"
         >
